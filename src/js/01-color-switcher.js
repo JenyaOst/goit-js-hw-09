@@ -3,6 +3,7 @@ const btnStart = document.querySelector('button[data-start]');
 const btnStop = document.querySelector('button[data-stop]');
 const colorBody = document.querySelector('body');
 btnStop.setAttribute('disabled', true) ;
+let intervalId ;
 btnStart.addEventListener('click', onClick);
 btnStop.addEventListener('click', offClick);
 function getRandomHexColor() {
