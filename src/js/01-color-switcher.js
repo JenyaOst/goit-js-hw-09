@@ -9,15 +9,17 @@ function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
   }
 function onClick (element){
-  intervalId=  setInterval(() => {
+  const initialColor = getRandomHexColor();
+colorBody.style.backgroundColor = initialColor;
+  intervalId =  setInterval(() => {
 const initialColor = getRandomHexColor();
 colorBody.style.backgroundColor = initialColor;
 }, 1000  );
 btnStop.removeAttribute('disabled');
-btnStart.setAttribute('disabled', true) ;
+element.target.setAttribute('disabled', true) ;
 };
-function offClick (){
+function offClick (element){
     clearInterval(intervalId);
     btnStart.removeAttribute('disabled');
-    btnStop.setAttribute('disabled', true) ;
+    element.target.setAttribute('disabled', true) ;
 };
